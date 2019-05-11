@@ -1,0 +1,40 @@
+﻿@* SSBCVP : Basta copiar a Index.cshtml, tirar os links que apontam para o crud, aqui no exemplo eu coloquei também o Id *@
+
+@model IEnumerable<ScaniaClientBase.Models.Cliente>
+
+@{
+    ViewBag.Title = "ListaClientes";
+}
+
+<h2>Lista de Clientes</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataCadastro)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataCadastro)
+            </td>
+        </tr>
+    }
+
+</table>
